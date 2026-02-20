@@ -1,0 +1,94 @@
+pkgbase = hexagon-dsp-binaries
+	pkgdesc = Hexagon DSP binaries and libraries for Qualcomm SoCs
+	pkgver = 20260110.r24.g5f5e79f
+	pkgrel = 1
+	url = https://github.com/linux-msm/hexagon-dsp-binaries
+	arch = aarch64
+	groups = hexagon-dsp-binaries
+	license = MIT
+	license = LicenseRef-Qualcomm
+	makedepends = git
+	options = !strip
+	options = !debug
+	source = hexagon-dsp-binaries::git+https://github.com/linux-msm/hexagon-dsp-binaries
+	sha256sums = SKIP
+
+pkgname = hexagon-dsp-binaries
+	pkgdesc = Hexagon DSP binaries - machine configuration
+	depends = 
+	optdepends = hexagon-dsp-binaries-qualcomm-db820c: DSP binaries for Qualcomm db820c
+	optdepends = hexagon-dsp-binaries-thundercomm-db845c: DSP binaries for Thundercomm db845c (RB3)
+	optdepends = hexagon-dsp-binaries-qualcomm-sdm845-hdk: DSP binaries for Qualcomm SDM845-HDK
+	optdepends = hexagon-dsp-binaries-thundercomm-rb5: DSP binaries for Thundercomm RB5
+	optdepends = hexagon-dsp-binaries-thundercomm-rb1: DSP binaries for Thundercomm RB1
+	optdepends = hexagon-dsp-binaries-thundercomm-rb2: DSP binaries for Thundercomm RB2
+	optdepends = hexagon-dsp-binaries-thundercomm-rb3gen2: DSP binaries for Thundercomm RB3gen2
+	optdepends = hexagon-dsp-binaries-radxa-dragon-q6a: DSP binaries for Radxa Dragon Q6A
+	optdepends = hexagon-dsp-binaries-thundercomm-rubikpi3: DSP binaries for Thundercomm RUBIK Pi 3
+	optdepends = hexagon-dsp-binaries-qualcomm-sa8775p-ride: DSP binaries for Qualcomm SA8775P-RIDE
+	optdepends = hexagon-dsp-binaries-qualcomm-qcs8300-ride: DSP binaries for Qualcomm QCS8300-RIDE
+	optdepends = hexagon-dsp-binaries-qualcomm-qcs615-ride: DSP binaries for Qualcomm QCS615-RIDE
+	optdepends = hexagon-dsp-binaries-qualcomm-hamoa-iot-evk: DSP binaries for Qualcomm Hamoa IoT EVK
+	optdepends = hexagon-dsp-binaries-qualcomm-sm8750-mtp: DSP binaries for Qualcomm SM8750-MTP
+	optdepends = hexagon-dsp-binaries-qualcomm-kaanapali-mtp: DSP binaries for Qualcomm Kaanapali-MTP
+	optdepends = hexagon-dsp-binaries-qualcomm-glymur-crd: DSP binaries for Qualcomm Glymur-CRD
+	optdepends = hexagon-dsp-binaries-qualcomm-iq8275-evk: DSP binaries for Qualcomm IQ8275-EVK
+	optdepends = hexagon-dsp-binaries-qualcomm-iq9075-evk: DSP binaries for Qualcomm IQ9075-EVK
+
+pkgname = hexagon-dsp-binaries-qualcomm-db820c
+	pkgdesc = Hexagon DSP binaries for Qualcomm db820c
+
+pkgname = hexagon-dsp-binaries-thundercomm-db845c
+	pkgdesc = Hexagon DSP binaries for Thundercomm db845c (RB3)
+
+pkgname = hexagon-dsp-binaries-qualcomm-sdm845-hdk
+	pkgdesc = Hexagon DSP binaries for Qualcomm SDM845-HDK
+	depends = hexagon-dsp-binaries-thundercomm-db845c
+
+pkgname = hexagon-dsp-binaries-thundercomm-rb5
+	pkgdesc = Hexagon DSP binaries for Thundercomm RB5
+
+pkgname = hexagon-dsp-binaries-thundercomm-rb1
+	pkgdesc = Hexagon DSP binaries for Thundercomm RB1
+
+pkgname = hexagon-dsp-binaries-thundercomm-rb2
+	pkgdesc = Hexagon DSP binaries for Thundercomm RB2
+
+pkgname = hexagon-dsp-binaries-thundercomm-rb3gen2
+	pkgdesc = Hexagon DSP binaries for Thundercomm RB3gen2
+
+pkgname = hexagon-dsp-binaries-radxa-dragon-q6a
+	pkgdesc = Hexagon DSP binaries for Radxa Dragon Q6A
+
+pkgname = hexagon-dsp-binaries-thundercomm-rubikpi3
+	pkgdesc = Hexagon DSP binaries for Thundercomm RUBIK Pi 3
+	depends = hexagon-dsp-binaries-thundercomm-rb3gen2
+
+pkgname = hexagon-dsp-binaries-qualcomm-sa8775p-ride
+	pkgdesc = Hexagon DSP binaries for Qualcomm SA8775P-RIDE
+
+pkgname = hexagon-dsp-binaries-qualcomm-qcs8300-ride
+	pkgdesc = Hexagon DSP binaries for Qualcomm QCS8300-RIDE
+
+pkgname = hexagon-dsp-binaries-qualcomm-qcs615-ride
+	pkgdesc = Hexagon DSP binaries for Qualcomm QCS615-RIDE
+
+pkgname = hexagon-dsp-binaries-qualcomm-hamoa-iot-evk
+	pkgdesc = Hexagon DSP binaries for Qualcomm Hamoa IoT EVK
+
+pkgname = hexagon-dsp-binaries-qualcomm-sm8750-mtp
+	pkgdesc = Hexagon DSP binaries for Qualcomm SM8750-MTP
+
+pkgname = hexagon-dsp-binaries-qualcomm-kaanapali-mtp
+	pkgdesc = Hexagon DSP binaries for Qualcomm Kaanapali-MTP
+
+pkgname = hexagon-dsp-binaries-qualcomm-glymur-crd
+	pkgdesc = Hexagon DSP binaries for Qualcomm Glymur-CRD
+
+pkgname = hexagon-dsp-binaries-qualcomm-iq8275-evk
+	pkgdesc = Hexagon DSP binaries for Qualcomm IQ8275-EVK
+	depends = hexagon-dsp-binaries-qualcomm-qcs8300-ride
+
+pkgname = hexagon-dsp-binaries-qualcomm-iq9075-evk
+	pkgdesc = Hexagon DSP binaries for Qualcomm IQ9075-EVK
+	depends = hexagon-dsp-binaries-qualcomm-sa8775p-ride
