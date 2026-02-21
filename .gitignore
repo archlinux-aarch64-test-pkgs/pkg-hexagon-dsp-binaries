@@ -3,3 +3,4 @@
 /hexagon-dsp-binaries
 *.zst
 *.gz
+*.pkg.tar.*

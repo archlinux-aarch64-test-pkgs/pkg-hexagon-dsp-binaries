@@ -10,7 +10,7 @@ pkgbase = hexagon-dsp-binaries
 	makedepends = git
 	options = !strip
 	options = !debug
-	source = hexagon-dsp-binaries::git+https://github.com/linux-msm/hexagon-dsp-binaries
+	source = hexagon-dsp-binaries::git+https://gitea.classfun.cn:4443/mirrors/hexagon-dsp-binaries.git
 	sha256sums = SKIP
 
 pkgname = hexagon-dsp-binaries
