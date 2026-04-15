@@ -1,7 +1,7 @@
 pkgbase = hexagon-dsp-binaries
 	pkgdesc = Hexagon DSP binaries and libraries for Qualcomm SoCs
 	pkgver = 20260410
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/linux-msm/hexagon-dsp-binaries
 	arch = aarch64
 	groups = hexagon-dsp-binaries

@@ -24,7 +24,7 @@ pkgname=(
   hexagon-dsp-binaries-qualcomm-iq9075-evk
 )
 pkgver=20260410
-pkgrel=1
+pkgrel=2
 pkgdesc="Hexagon DSP binaries and libraries for Qualcomm SoCs"
 arch=('aarch64')
 url="https://github.com/linux-msm/hexagon-dsp-binaries"
@@ -80,8 +80,9 @@ package_hexagon-dsp-binaries() {
   )
 
   cd "$srcdir/_staging"
-  install -Dm644 "${_dspdir}/conf.d/00-hexagon-dsp-binaries.yaml" \
-    "$pkgdir/${_dspdir}/conf.d/00-hexagon-dsp-binaries.yaml"
+  mkdir -p "$pkgdir/${_dspdir}/conf.d/"
+  install -Dm644 "${_dspdir}/conf.d/"*.yaml \
+    "$pkgdir/${_dspdir}/conf.d/"
   _install_licenses "$pkgname"
 }
 
