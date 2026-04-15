@@ -1,6 +1,6 @@
 pkgbase = hexagon-dsp-binaries
 	pkgdesc = Hexagon DSP binaries and libraries for Qualcomm SoCs
-	pkgver = 20260110.r24.g5f5e79f
+	pkgver = 20260410
 	pkgrel = 1
 	url = https://github.com/linux-msm/hexagon-dsp-binaries
 	arch = aarch64
@@ -10,7 +10,7 @@ pkgbase = hexagon-dsp-binaries
 	makedepends = git
 	options = !strip
 	options = !debug
-	source = hexagon-dsp-binaries::git+https://gitea.classfun.cn:4443/mirrors/hexagon-dsp-binaries.git
+	source = hexagon-dsp-binaries::git+https://github.com/linux-msm/hexagon-dsp-binaries.git#tag=20260410
 	sha256sums = SKIP
 
 pkgname = hexagon-dsp-binaries

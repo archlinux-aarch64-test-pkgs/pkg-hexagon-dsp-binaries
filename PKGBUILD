@@ -23,7 +23,7 @@ pkgname=(
   hexagon-dsp-binaries-qualcomm-iq8275-evk
   hexagon-dsp-binaries-qualcomm-iq9075-evk
 )
-pkgver=20260110.r24.g5f5e79f
+pkgver=20260410
 pkgrel=1
 pkgdesc="Hexagon DSP binaries and libraries for Qualcomm SoCs"
 arch=('aarch64')
@@ -32,17 +32,10 @@ license=('MIT' 'LicenseRef-Qualcomm')
 groups=('hexagon-dsp-binaries')
 makedepends=('git')
 options=('!strip' '!debug')
-source=("${pkgbase}::git+https://gitea.classfun.cn:4443/mirrors/hexagon-dsp-binaries.git")
+source=("${pkgbase}::git+https://github.com/linux-msm/hexagon-dsp-binaries.git#tag=${pkgver}")
 sha256sums=('SKIP')
 
 _dspdir=usr/share/qcom
-
-pkgver() {
-  cd "$pkgbase"
-  git describe --tags --long 2>/dev/null \
-    | sed 's/\([^-]*-g\)/r\1/;s/-/./g' \
-    || printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
 
 build() {
   cd "$pkgbase"
