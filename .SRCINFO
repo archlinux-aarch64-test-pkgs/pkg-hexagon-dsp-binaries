@@ -1,8 +1,8 @@
 pkgbase = hexagon-dsp-binaries
 	pkgdesc = Hexagon DSP binaries and libraries for Qualcomm SoCs
-	pkgver = 20260410
-	pkgrel = 2
-	url = https://github.com/linux-msm/hexagon-dsp-binaries
+	pkgver = 20260828.r225.g3277570
+	pkgrel = 1
+	url = https://github.com/strongtz/hexagon-dsp-binaries
 	arch = aarch64
 	groups = hexagon-dsp-binaries
 	license = MIT
@@ -10,7 +10,7 @@ pkgbase = hexagon-dsp-binaries
 	makedepends = git
 	options = !strip
 	options = !debug
-	source = hexagon-dsp-binaries::git+https://github.com/linux-msm/hexagon-dsp-binaries.git#tag=20260410
+	source = hexagon-dsp-binaries::git+https://github.com/strongtz/hexagon-dsp-binaries.git#branch=sc8280xp
 	sha256sums = SKIP
 
 pkgname = hexagon-dsp-binaries
@@ -24,6 +24,8 @@ pkgname = hexagon-dsp-binaries
 	optdepends = hexagon-dsp-binaries-thundercomm-rb2: DSP binaries for Thundercomm RB2
 	optdepends = hexagon-dsp-binaries-thundercomm-rb3gen2: DSP binaries for Thundercomm RB3gen2
 	optdepends = hexagon-dsp-binaries-radxa-dragon-q6a: DSP binaries for Radxa Dragon Q6A
+	optdepends = hexagon-dsp-binaries-qualcomm-sc8280xp-crd: DSP binaries for Qualcomm SC8280XP CRD
+	optdepends = hexagon-dsp-binaries-radxa-dragon-q8b: DSP binaries for Radxa Dragon Q8B
 	optdepends = hexagon-dsp-binaries-thundercomm-rubikpi3: DSP binaries for Thundercomm RUBIK Pi 3
 	optdepends = hexagon-dsp-binaries-qualcomm-sa8775p-ride: DSP binaries for Qualcomm SA8775P-RIDE
 	optdepends = hexagon-dsp-binaries-qualcomm-qcs8300-ride: DSP binaries for Qualcomm QCS8300-RIDE
@@ -59,6 +61,13 @@ pkgname = hexagon-dsp-binaries-thundercomm-rb3gen2
 
 pkgname = hexagon-dsp-binaries-radxa-dragon-q6a
 	pkgdesc = Hexagon DSP binaries for Radxa Dragon Q6A
+
+pkgname = hexagon-dsp-binaries-qualcomm-sc8280xp-crd
+	pkgdesc = Hexagon DSP binaries for Qualcomm SC8280XP CRD
+
+pkgname = hexagon-dsp-binaries-radxa-dragon-q8b
+	pkgdesc = Hexagon DSP binaries for Radxa Dragon Q8B
+	depends = hexagon-dsp-binaries-qualcomm-sc8280xp-crd
 
 pkgname = hexagon-dsp-binaries-thundercomm-rubikpi3
 	pkgdesc = Hexagon DSP binaries for Thundercomm RUBIK Pi 3

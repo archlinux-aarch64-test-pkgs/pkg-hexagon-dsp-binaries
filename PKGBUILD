@@ -1,5 +1,5 @@
 # Maintainer: Xilin Wu <sophon@radxa.com>
-# Upstream: https://github.com/linux-msm/hexagon-dsp-binaries
+# Upstream: https://github.com/strongtz/hexagon-dsp-binaries
 
 pkgbase=hexagon-dsp-binaries
 pkgname=(
@@ -12,6 +12,8 @@ pkgname=(
   hexagon-dsp-binaries-thundercomm-rb2
   hexagon-dsp-binaries-thundercomm-rb3gen2
   hexagon-dsp-binaries-radxa-dragon-q6a
+  hexagon-dsp-binaries-qualcomm-sc8280xp-crd
+  hexagon-dsp-binaries-radxa-dragon-q8b
   hexagon-dsp-binaries-thundercomm-rubikpi3
   hexagon-dsp-binaries-qualcomm-sa8775p-ride
   hexagon-dsp-binaries-qualcomm-qcs8300-ride
@@ -23,19 +25,25 @@ pkgname=(
   hexagon-dsp-binaries-qualcomm-iq8275-evk
   hexagon-dsp-binaries-qualcomm-iq9075-evk
 )
-pkgver=20260410
-pkgrel=2
+pkgver=20260828.r225.g3277570
+pkgrel=1
 pkgdesc="Hexagon DSP binaries and libraries for Qualcomm SoCs"
 arch=('aarch64')
-url="https://github.com/linux-msm/hexagon-dsp-binaries"
+url="https://github.com/strongtz/hexagon-dsp-binaries"
 license=('MIT' 'LicenseRef-Qualcomm')
 groups=('hexagon-dsp-binaries')
 makedepends=('git')
 options=('!strip' '!debug')
-source=("${pkgbase}::git+https://github.com/linux-msm/hexagon-dsp-binaries.git#tag=${pkgver}")
+source=("${pkgbase}::git+https://github.com/strongtz/hexagon-dsp-binaries.git#branch=sc8280xp")
 sha256sums=('SKIP')
 
 _dspdir=usr/share/qcom
+
+pkgver() {
+  cd "$pkgbase"
+  printf '%s.r%s.g%s' "$(git log -1 --format=%cs | tr -d '-')" \
+    "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
 
 build() {
   cd "$pkgbase"
@@ -67,6 +75,8 @@ package_hexagon-dsp-binaries() {
     'hexagon-dsp-binaries-thundercomm-rb2: DSP binaries for Thundercomm RB2'
     'hexagon-dsp-binaries-thundercomm-rb3gen2: DSP binaries for Thundercomm RB3gen2'
     'hexagon-dsp-binaries-radxa-dragon-q6a: DSP binaries for Radxa Dragon Q6A'
+    'hexagon-dsp-binaries-qualcomm-sc8280xp-crd: DSP binaries for Qualcomm SC8280XP CRD'
+    'hexagon-dsp-binaries-radxa-dragon-q8b: DSP binaries for Radxa Dragon Q8B'
     'hexagon-dsp-binaries-thundercomm-rubikpi3: DSP binaries for Thundercomm RUBIK Pi 3'
     'hexagon-dsp-binaries-qualcomm-sa8775p-ride: DSP binaries for Qualcomm SA8775P-RIDE'
     'hexagon-dsp-binaries-qualcomm-qcs8300-ride: DSP binaries for Qualcomm QCS8300-RIDE'
@@ -213,5 +223,20 @@ package_hexagon-dsp-binaries-qualcomm-iq9075-evk() {
   pkgdesc="Hexagon DSP binaries for Qualcomm IQ9075-EVK"
   depends=('hexagon-dsp-binaries-qualcomm-sa8775p-ride')
   _install_device "sa8775p/Qualcomm/IQ9075-EVK"
+  _install_licenses "$pkgname"
+}
+
+# Qualcomm SC8280XP CRD
+package_hexagon-dsp-binaries-qualcomm-sc8280xp-crd() {
+  pkgdesc="Hexagon DSP binaries for Qualcomm SC8280XP CRD"
+  _install_device "sc8280xp/Qualcomm/SC8280XP-CRD"
+  _install_licenses "$pkgname"
+}
+
+# Radxa Dragon Q8B (symlinks to SC8280XP CRD firmware)
+package_hexagon-dsp-binaries-radxa-dragon-q8b() {
+  pkgdesc="Hexagon DSP binaries for Radxa Dragon Q8B"
+  depends=('hexagon-dsp-binaries-qualcomm-sc8280xp-crd')
+  _install_device "sc8280xp/radxa/dragon-q8b"
   _install_licenses "$pkgname"
 }
